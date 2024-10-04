@@ -264,6 +264,3 @@ class Solution:
             return "Perfect number"
         else:
             return "Not a perfect number"
-obj = Solution()
-print(obj.q23())
-# 21
