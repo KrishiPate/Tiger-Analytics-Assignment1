@@ -233,8 +233,36 @@ class Solution:
                 s = s[-1] + s[:-1]  # Move the last character to the start
                 ans.append(s)
             return ans
-        
+    
     def q20(self):
+        healthy_patient = {
+            "Sugar level": 15,
+            "Blood pressure": 32,
+            "Heartbeat rate": 71,
+            "weight": 65,
+            "fat percentage": 10
+        }
+
+        # Get user input for patient's data
+        patient_data = {}
+        patient_data["Sugar level"] = int(input("Enter Sugar level: "))
+        patient_data["Blood pressure"] = int(input("Enter Blood pressure: "))
+        patient_data["Heartbeat rate"] = int(input("Enter Heartbeat rate: "))
+        patient_data["weight"] = int(input("Enter weight: "))
+        patient_data["fat percentage"] = int(input("Enter fat percentage: "))
+
+        # Compare and provide warnings
+        for key in healthy_patient:
+            difference = patient_data[key] - healthy_patient[key]
+            if difference != 0:
+                print(f"{key}: {difference}")
+                if difference > 0:
+                    print(f"The {key.lower()} is {difference} more than the ideal value.")
+                else:
+                    print(f"The {key.lower()} is {-difference} less than the ideal value.")
+            else:
+                print(f"{key} is within the healthy range.")
+    def q21(self):
         number_str = input()
         digits = [int(digit) for digit in number_str]
         num_digits = len(digits)
